@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>日以继夜 夜以继日</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">日以继夜 夜以继日<small>拍卖 · 博弈 · 优先选择权</small></div>
+  <div class="roundbar">
+    <span class="round-label">回合</span>
+    <div class="pips" id="pips"></div>
+  </div>
+  <div style="display:flex;gap:8px">
+    <button class="btn" id="btnRules">规则速查</button>
+    <button class="btn" id="btnScore">计分板</button>
+    <button class="btn" id="btnNew">重开</button>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="table">
+    <div class="seats" id="seats"></div>
+
+    <div class="goods-zone">
+      <div class="zone-title">商 品 区</div>
+      <div class="goods" id="goods"></div>
+    </div>
+
+    <div class="mypanel">
+      <h3><span>你 的 手 牌</span><span id="handInfo"></span></h3>
+      <div class="myhand" id="myhand"></div>
+      <div class="acts" id="acts"></div>
+      <div class="hint" id="hint"></div>
+    </div>
+  </div>
+
+  <div class="side">
+    <div class="panel">
+      <h4>战 报</h4>
+      <div class="log" id="log"></div>
+    </div>
+    <div class="panel">
+      <h4>净 价 值</h4>
+      <div id="scorebox"></div>
+    </div>
+    <div class="panel">
+      <h4>速 查</h4>
+      <div class="legend">
+        <span class="sw" style="background:#efe4c6"></span><b>白牌（昼）</b>只能明拍，公开<br>
+        <span class="sw" style="background:#241f18;border:1px solid #2e6b5e"></span><b>黑牌（夜）</b>只能暗拍，保密<br>
+        <b>明拿白、暗拿黑</b>；颜色配不上就比数字<br>
+        <b>消耗</b>：最高明牌与全部暗牌本轮消失<br>
+        <b>空过</b>：拿全场最低，本回合不再出价<br>
+        <b>起始</b>：上一场获益最少者下一场先手<br>
+        <b>✦ 万能牌（可选模组）</b>：起手整手 8 张不分黑白，数值 1~4n 每值恰好 2 张，开局面板开启<br>
+        拍卖全部结束，<b>净价值</b>最高者获胜
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mask" id="mask"><div class="dialog" id="dialog"></div></div>
+<div class="toast" id="toast"></div>
+
+<script src="js/cards_data.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/ai.js"></script>
+<script src="js/ui.js"></script>
+</body>
+</html>
